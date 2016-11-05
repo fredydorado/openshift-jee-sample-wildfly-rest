@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebService;
 
-@WebService
+@WebService(name="verificacionPlacas")
 public class VerificacionPlacas {
 
 	@WebMethod()
@@ -21,7 +22,7 @@ public class VerificacionPlacas {
 	}
 
 	@WebMethod()
-	public boolean verificarPlaca(String placa) {
+	public boolean verificarPlaca(@WebParam(name="placa")String placa) {
 
 		List<String> resultado = new ArrayList<>();
 

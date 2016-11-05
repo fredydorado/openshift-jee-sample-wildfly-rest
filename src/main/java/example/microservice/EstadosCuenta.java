@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebService;
 
-@WebService
+@WebService(name="estadoCuenta")
 public class EstadosCuenta {
 
 	@WebMethod()
@@ -21,7 +22,7 @@ public class EstadosCuenta {
 	}
 	
 	@WebMethod()
-	public Cuenta verificarCuenta(String cedula,String referencia) {
+	public Cuenta verificarCuenta(@WebParam(name="cedula")String cedula,@WebParam(name="referencia")String referencia) {
 
 		Cuenta cuenta=new Cuenta(null, null, null);
 		List<Cuenta> resultado = verificarEstadosCuenta();
